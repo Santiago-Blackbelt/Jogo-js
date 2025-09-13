@@ -9,20 +9,45 @@
 </head>
 
 <body>
-    <h1>Jogo de adivinhação de números</h1>
-    <p>Selecionamos um número aleatório entre 1 e 100. Tente adivinhar em 10 jogadas ou menos. Avisaremos se o seu
-        palpite foi muito alto ou muito baixo.</p>
-    <div class="form">
-        <label for="guessField">Digite um palpite:</label>
-        <input type="number" min="1" max="100" required id="guessField">
-        <input type="submit" value="submit guess" class="guessSubmit">
-    </div>
 
-    <div class="resultParas">
-        <p class="guesses"></p>
-        <p class="lastResult"></p>
-        <p class="lowOrHi"></p>
-    </div>
+    <header>
+        <div class="logo">｡◕‿◕｡ Jogos Divertidos ｡◕‿◕｡ </div>
+    </header>
+
+    <main class="container">
+
+        <div class="tech=circle">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+
+
+        <h1>Jogo de adivinhação com números</h1>
+        <p>Selecionamos um número aleatório entre 1 e 100. Tente adivinhar em 10 jogadas ou menos. Avisaremos se o seu
+            palpite foi muito alto ou muito baixo.</p>
+        <div class="form">
+            <label for="guessField">Digite um palpite:</label>
+            <input type="number" min="1" max="100" required id="guessField" placeholder="Digite Aqui...">
+            <input type="submit" value="submit guess" class="guessSubmit">
+        </div>
+
+        <div class="resultParas">
+            <p class="guesses"></p>
+            <p class="lastResult"></p>
+            <p class="lowOrHi"></p>
+        </div>
+
+        <div>
+            <figure>
+                <img src="jogo.png" alt="jogofoto">
+                <figcaption>Jogue com responsabilidade !</figcaption>
+            </figure>
+        </div>
+
+
+    </main>
 
 
     <script src="script.js"></script>
