@@ -10,16 +10,16 @@ html {
 }
 
 body {
+    margin: 0%;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    margin: 0;
+    justify-content: space-between; /* topo, conteúdo, rodapé */
     align-items: center;
-    height: 100vh;
     background-color: #0f0f1e;
     color: #fff;
     font-size: 16px;
-    overflow: hidden;
+    overflow: hidden; /* permite rolar no eixo Y se precisar */
 }
 
 header {
@@ -31,8 +31,52 @@ header {
     position: relative;
 }
 
-.form input [type="number"] {
+main.container {
+    width: 100%;
+    max-width: 1100px;
+    padding: 16px;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background:radial-gradient(circle, rgba(0, 247, 255, 0.2) 0%, rgba(15, 15, 30, 0) 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: blur(50px);
+    animation: pulse 4s infinite alternate;
+
+}
+
+@keyframes pulse {
+    0%{
+        opacity: 0.5;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.5);
+    }
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    /* empilha */
+    align-items: center;
+    /* centraliza */
+    gap: 10px;
+    width: 100%;
+}
+
+
+
+.form input[type="number"] {
     width: 200px;
+    z-index: 5;
 }
 
 .lastResult {
@@ -60,24 +104,23 @@ p {
 
 .logo {
     font-family: sans-serif;
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: 900;
     color: #00f7ff;
     text-shadow: 0 0 50px rgba(0, 247, 255, 0.5);
 }
 
 figcaption {
-    font-style: sans-serif;
+    font-family: sans-serif;
     color: #FFD700;
     margin-top: 8px;
-    margin-right: 50%;
-    margin-left: 35%;
     font-size: small;
+    text-align: center;
 
 }
 
 img {
-    max-width: 20%;
+    max-width: 40%;
     filter: drop-shadow(0 0 30px rgba(0, 247, 255, 0.3));
     border-radius: 8px;
     margin-right: auto;
@@ -85,9 +128,53 @@ img {
     display: block;
 }
 
-label {
+.form label {
+    display: block;
     color: #00f7ff;
-    margin-right: 50%;
-    margin-left: 35%;
+    width: 100%;
+    text-align: center;
+    margin: 12px 0 8px;
+   
 }
 
+
+/* dá um tamanho mínimo ao botão */
+.guessSubmit {
+    padding: 6px 10px;
+    color: #;
+    background-color: #FFD700;
+    z-index: 5;
+}
+
+resetButton {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* centro perfeito */
+  z-index: 1000;                     /* acima de brilhos/efeitos */
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #FFD700;
+  color: #0f0f1e;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.25);
+}
+.resetButton:hover { filter: brightness(1.05); }
+
+/* footer */
+
+.site-footer {
+    width: 100%;
+    padding: 16px 24px;
+    text-align: center;
+    color: #FFD700;
+    background: #0f0f1e;
+    border-top: 1px solid rgba(0, 247, 255, 0.25);
+    box-shadow: 0 -10px 40px rgba(0, 247, 255, 0.15) inset;
+
+}
+
+.site-footer a {color: #00f7ff; text-decoration: none;}
+.site-footer a:hover {text-decoration: underline;}

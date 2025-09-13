@@ -50,12 +50,13 @@ function checkGuess() {
 guessSubmit.addEventListener('click', checkGuess);
 
 function setGameOver() {
-    guessField.disabled = true;
-    guessSubmit.disabled = true;
-    resetButton = document.createElement('button');
-    resetButton.textContent = 'Iniciar novo jogo';
-    document.body.appendChild(resetButton);
-    resetButton.addEventListener('click', resetGame);
+  guessField.disabled = true;
+  guessSubmit.disabled = true;
+  resetButton = document.createElement('button');
+  resetButton.textContent = 'Iniciar novo jogo';
+  resetButton.className = 'resetButton';        // <— nova classe
+  document.body.appendChild(resetButton);       // continua no body
+  resetButton.addEventListener('click', resetGame);
 }
 
 
