@@ -8,4 +8,4 @@
 - **CSS** 
 - **JavaScript**
 
-🖼️ ![Preview do jogo](fotojogo.png)
+🖼️ ![Preview do jogo](imagem_2025-09-14_161147645.png)
